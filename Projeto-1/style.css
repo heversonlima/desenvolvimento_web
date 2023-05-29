@@ -18,6 +18,10 @@ header {
     line-height: 30px;
 }
 
+.title{
+    color: black;
+}
+
 article {
     max-width: 850px;
     margin: auto;
@@ -33,6 +37,7 @@ article {
 
 .share-post, 
 .links-title {
+    color: black;
     font-size: 12px;
     font-weight: 600;
     line-height: 22px;
