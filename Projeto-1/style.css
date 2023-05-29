@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+}
+
+header{
+    background-color: #2E94CC;
+    color: white;
+    text-align: center;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    font-size: 24px;
+    letter-spacing: 0.6px;
+    line-height: 24px;
+}
+
+article{
+    max-width: 850px;
+    margin: auto;
+    padding-top: 70px;
+}
+
+.post-author{
+    color: #6C6C6C;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.title{
+    margin: 0;
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 58px;
+    letter-spacing: 0.015em;
+    color: #000000;
+}
+
+.hero-image img{
+    max-width: 100%;
+}
+
+.share-post{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    text-transform: uppercase; /*so letras minusculas*/
+    color: #000000;
+
+}
+
+#tittle-post{
+    margin-bottom: 50px;
+}
