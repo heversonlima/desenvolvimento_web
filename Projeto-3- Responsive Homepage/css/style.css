@@ -3,12 +3,13 @@ body {
     font-family: "Heebo", sans-serif;
     padding-top: 80px;
   }
-  .container {
-    max-width: 1180px;
+.container {
+    max-width: 1440px;
+    margin: 90%;
     margin: auto;
     padding: 0 16px;
   }
-  
+
   ul {
     margin: 0;
     padding: 0;
@@ -402,3 +403,23 @@ body {
     justify-content: center;
   
   }  
+
+  /*========CSS MEDIA QUERIES=========*/
+   /*from large desktop*/
+@media screen and (max-width: 1440px){
+    .container {
+        max-width: 1180px;
+    }
+}
+/*from tablets*/
+@media screen and (max-width: 960px){
+    .container {
+        max-width: 92%;
+    }
+}
+/*from mobile phones*/
+@media screen and (max-width: 576px){
+    .container {
+        max-width: 92%;
+    }
+}
