@@ -1,3 +1,18 @@
+const galeryImg = [
+  {
+    src: "./assets/gallery/image1.jpg",
+    alt: "Thumbnail Image 1",
+  },
+  {
+    src: "./assets/gallery/image2.jpg",
+    alt: "Thumbnail Image 2",
+  },
+  {
+    src: "./assets/gallery/image3.jpg",
+    alt: "Thumbnail Image 3",
+  },
+];
+
 function menuHandler() {
   //aplicando ação no botaõ de abrir menu
   document
@@ -78,22 +93,8 @@ function localTime() {
   }, 1000);
 }
 
+// Seção das fotos
 function thumbnailHandler() {
-  // Seção das fotos
-  const galeryImg = [
-    {
-      src: "./assets/gallery/image1.jpg",
-      alt: "Thumbnail Image 1",
-    },
-    {
-      src: "./assets/gallery/image2.jpg",
-      alt: "Thumbnail Image 2",
-    },
-    {
-      src: "./assets/gallery/image3.jpg",
-      alt: "Thumbnail Image 3",
-    },
-  ];
 
   // pegando a imagem principal e alterando o src e alt para da mais dinamismo
   let imgPrincipal = document.querySelector("#gallery > img");
