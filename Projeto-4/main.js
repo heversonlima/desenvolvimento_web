@@ -16,7 +16,6 @@ function celciusToFarh(temperatura) {
   return farh;
 }
 
-const previsaoTempo = "ensolarado";
 const userLocal = "Cametá";
 let temperatura = 34;
 let condicoesCelsius = `The weather is cloudy in ${userLocal} and it's ${temperatura}°C outside.`;
@@ -32,4 +31,52 @@ document.querySelector(".weather-group").addEventListener("click", function(e){
   } else if (e.target.id == "fahr"){
     document.querySelector("p#weather").innerHTML = condicoesFarh;
   }
+})
+
+
+// Relogio 
+setInterval(function(){
+  let horaLocal = new Date();
+
+  document.querySelector("span[data-time=hours]").textContent = horaLocal.getHours().toString().padStart(2, "0"); 
+  document.querySelector("span[data-time=minutes]").textContent = horaLocal.getMinutes().toString().padStart(2, "0");
+  document.querySelector("span[data-time=seconds]").textContent = horaLocal.getSeconds().toString().padStart(2, "0"); 
+  
+},1000) 
+
+// Seção das fotos
+const galeryImg = [
+  {
+    src: "./assets/gallery/image1.jpg",
+    alt: "Thumbnail Image 1"
+  },
+  {
+    src: "./assets/gallery/image2.jpg",
+    alt: "Thumbnail Image 2"
+  },
+  {
+    src: "./assets/gallery/image3.jpg",
+    alt: "Thumbnail Image 3"
+  },
+];
+
+// pegando a imagem principal e alterando o src e alt para da mais dinamismo
+let imgPrincipal = document.querySelector("#gallery > img");
+//pegando a seçao thumbnails
+let thumbnails = document.querySelector("#gallery .thumbnails");
+
+imgPrincipal.src = galeryImg[0].src;
+imgPrincipal.alt = galeryImg[0].alt;
+
+//<img src="./assets/gallery/image1.jpg" 
+//alt="Thumbnail Image 1" 
+//data-array-index="0" data-selected="true"></img>
+galeryImg.forEach(function(image, index){
+  let thumb = document.createElement("img");
+  thumb.src = image.src;
+  thumb.alt = image.alt;
+  thumb.dataset.arrayIndex = index;
+  thumb.dataset.selected = false; 
+  // adcionar um novo elemento dentro de outro elemento
+  thumbnails.appendChild(thumb);
 })
