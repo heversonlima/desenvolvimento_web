@@ -35,6 +35,7 @@ document.querySelector(".weather-group").addEventListener("click", function(e){
 
 
 // Relogio 
+/*
 setInterval(function(){
   let horaLocal = new Date();
 
@@ -42,7 +43,7 @@ setInterval(function(){
   document.querySelector("span[data-time=minutes]").textContent = horaLocal.getMinutes().toString().padStart(2, "0");
   document.querySelector("span[data-time=seconds]").textContent = horaLocal.getSeconds().toString().padStart(2, "0"); 
   
-},1000) 
+},1000) */
 
 // Seção das fotos
 const galeryImg = [
@@ -76,7 +77,26 @@ galeryImg.forEach(function(image, index){
   thumb.src = image.src;
   thumb.alt = image.alt;
   thumb.dataset.arrayIndex = index;
-  thumb.dataset.selected = false; 
+  thumb.dataset.selected = index === 0 ? true : false; 
+ 
+  
+  thumb.addEventListener("click", function(e){
+    //variavel pra saber quem é que foi selecionado
+    let selectedIndex = e.target.dataset.arrayIndex; 
+    // variavel para pegar a imagem correta da lista galeryImg
+    let selectedImage = galeryImg[selectedIndex];
+    //mudar img sempre que clicar em um thumbnail
+    imgPrincipal.src = selectedImage.src;
+    imgPrincipal.alt = selectedImage.alt;
+
+    thumbnails.querySelectorAll("img").forEach(function(img){
+      //false para os que não foram clicados: no selector
+      img.dataset.selected = false;
+    });
+    // mudar o que foi clicado para true e mostrar o selected
+    e.target.dataset.selected = true;
+  });
+
   // adcionar um novo elemento dentro de outro elemento
   thumbnails.appendChild(thumb);
-})
+});
